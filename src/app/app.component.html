@@ -1,7 +1,16 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-body">
-      <app-game-control></app-game-control>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <app-game-control (intervalEmitter)="onEventFired($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number] = "oddNumber"></app-odd>
+    </div>
+
+    <div class="col-xs-12">
+      <app-even *ngFor="let evenNumber of evenNumbers" [number] = "evenNumber"></app-even>
     </div>
   </div>
 </div>
